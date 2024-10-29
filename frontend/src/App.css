@@ -1,42 +1,126 @@
+/* Root Div */
+*, *::after, *::before{
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  font-family: "Open Sans", sans-serif; font-optical-sizing: auto;
+  display: flex; flex-direction: column; align-items: center;
+  width: 100vw; min-height: 100vh;
+  background-color: var(--primary);
+  margin: 0; padding: 0;
+  color: var(--white);
+}
+
+.container {
+  padding-inline: var(--padding) var(--padding);
+}
+
+.text-center{
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Tool Tip */
+
+.tooltip {
+  position: relative; display: inline-block;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tooltip .tooltiptext {
+  visibility: hidden; width: 120px;
+  background-color: var(--black); color: var(--white);
+  text-align: center; padding: 5px 0;
+  position: absolute; z-index: 1;
+  border-radius: 6px;
+}
+.tooltip .tooltiptext {
+  width: 120px; margin-left: -60px; margin-top: var(--margin);
+  top: 100%; left: 50%;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Header */
+
+.h-div {
+  position: fixed; top: 0;
+  padding: var(--padding);
+  display: flex; justify-content: center; align-items: center; flex-direction: column;
+  width: 100%;
 }
 
-.card {
-  padding: 2em;
+.h-item-div{
+  width: 100%;
+  margin-bottom: var(--margin);
 }
 
-.read-the-docs {
-  color: #888;
+.h-hero {
+  display: flex; justify-content: space-between; align-items: center;
+  width: 100%;
+}
+
+.h-hero button {
+  display: flex; justify-content: center; align-items: center;
+  height: 100%; font-size: 1rem;
+  border: 1px solid var(--white);
+  padding: var(--padding);
+  font-weight: var(--bold);
+}
+
+.h-hero button:hover {
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+.h-logo {
+  height: 62px;
+}
+
+.h-menu {
+  display: grid; grid-template-columns: repeat(3, 3fr);
+}
+
+.h-menu-item, .h-menu-item a {
+  display: flex; justify-content: center; align-items: center;
+  font-size: 0.85rem; font-weight: 600;
+}
+
+
+/* .h-menu-item a{
+  transition: all 100ms ease-in; width: fit-content;
+} */
+
+
+/* Footer */
+
+.f-div{
+  display: flex; justify-content: center; align-items: center; flex-direction: column;
+  border-top: 1px solid var(--white);
+  position: fixed; bottom: 0;
+  padding: var(--padding);
+  width: 100%; 
+
+}
+
+.f-socials-list {
+  display: flex; margin-bottom: var(--margin);
+}
+
+.f-logo-div img {
+  height: 62px; width: auto;
+}
+
+.f-info-div {
+  display: flex; margin-top: var(--margin);
+}
+.f-info {
+  border-left: 1px solid var(--white);
+  font-size: 0.85rem;
+}
+
+/* Page Alignment */
+#root-div{
+  width: 100%; min-height: 100vh;
+  display: block;
 }
