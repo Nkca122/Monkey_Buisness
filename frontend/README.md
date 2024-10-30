@@ -1,8 +1,12 @@
-# React + Vite
+<div align = "center">
+    <img src="./assets/logo.png" height="50">
+    <h2 align="center">
+        Monkey Buisness
+    </h2>
+     <i>A tool for financial analysis</i>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project Description📝
 
-Currently, two official plugins are available:
+Develop a sustainable growth strategy model for startups that aligns scaling efforts with market demand and unit economics, ensuring that growth is profitable and sustainable. The model should help startups minimize the risks of over-expansion while focusing on operational efficiency and market-driven growth.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
