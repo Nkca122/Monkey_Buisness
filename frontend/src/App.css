@@ -10,6 +10,13 @@
   background-color: var(--primary);
   margin: 0; padding: 0;
   color: var(--white);
+
+
+  /* Local Variables */
+  --wave-height: 150px;
+
+  --layer-plus-1: 5;
+  --layer-minus-1: -5;
 }
 
 .container {
@@ -41,10 +48,30 @@
   visibility: visible;
 }
 
+.grid {
+  display: grid !important; gap: 0; 
+  width: 100%;
+}
+
+.grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px){
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+.grid-item-div {
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  position: relative; width: 100%;
+}
 /* Header */
 
 .h-div {
-  position: fixed; top: 0;
+  position: fixed; top: 0; z-index: var(--layer-plus-1);
   padding: var(--padding);
   display: flex; justify-content: center; align-items: center; flex-direction: column;
   width: 100%;
@@ -81,7 +108,7 @@
   display: grid; grid-template-columns: repeat(3, 3fr);
 }
 
-.h-menu-item, .h-menu-item a {
+.h-menu-item, .h-menu-item a{
   display: flex; justify-content: center; align-items: center;
   font-size: 0.85rem; font-weight: 600;
 }
@@ -97,7 +124,7 @@
 .f-div{
   display: flex; justify-content: center; align-items: center; flex-direction: column;
   border-top: 1px solid var(--white);
-  position: fixed; bottom: 0;
+  position: absolute; top: 100%; background-color: var(--primary-dark);
   padding: var(--padding);
   width: 100%; 
 
@@ -120,7 +147,61 @@
 }
 
 /* Page Alignment */
-#root-div{
+main {
   width: 100%; min-height: 100vh;
-  display: block;
+  position: relative;
+}
+
+.hero{
+  position: absolute; top: 0;
+  min-height: 880px; width: 100%;
+}
+
+.hero-div {
+  display: flex; justify-content: center; align-items: center; flex-direction: column;
+  margin-top: var(--wave-height);
+  background-color: var(--primary-light);
+
+  width: 95%; height: 80vh;
+  padding: var(--padding);
+}
+
+.hero-waves {
+  position: absolute; top: 0; left: 0; z-index: -1;
+  overflow: hidden; line-height: 0;
+  width: 100%;
+}
+
+.hero-waves svg {
+  width: calc(100% + 1.3px); height: var(--wave-height);
+  position: relative; display: block;
+  transform: rotateY(180deg);
+}
+
+.hero-waves .shape-fill {
+  fill: var(--primary-dark);
+}
+
+@keyframes blob {
+  0%, 100% {
+    border-radius: 60% 20% 40% 70%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 20%;
+  }
+}
+
+.hero-img {
+  width: 100%;
+  mask: url("../assets/logo-mask.svg") center/contain  no-repeat,
+  linear-gradient(#000 0 0);
+  mask-size: 80% 80%; mask-composite: exclude;
+
+  animation: blob 1s ease-in-out 0ms infinite;
+}
+
+
+
+.hero-text {
+  color: var(--black);
 }
