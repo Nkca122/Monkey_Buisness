@@ -3,7 +3,6 @@ import { useRef, useState } from "react";
 export default function SlideShow(props) {
   let slideShowSources = props.slides;
   let [i, setI] = useState(0);
-  
 
   let imgRef = useRef(null);
   const slideShow = () => {
@@ -19,15 +18,17 @@ export default function SlideShow(props) {
     <>
       <div className="slideshow-div">
         <div className="hero-img-div">
-          <img
-            src="../assets/finance.jpg"
-            alt=""
-            className="hero-img"
-            ref={imgRef}
-            onLoad={() => {
-              setTimeout(slideShow, 3000);
-            }}
-          />
+          {slideShowSources && slideShowSources.length ? (
+            <img
+              src= {slideShowSources[i]}
+              alt=""
+              className="hero-img"
+              ref={imgRef}
+              onLoad={() => {
+                setTimeout(slideShow, 3000);
+              }}
+            />
+          ) : null}
         </div>
       </div>
     </>

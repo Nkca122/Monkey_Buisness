@@ -2,7 +2,11 @@ import SlideShow from "../components/slideshow";
 import Card from "../components/card";
 import { useRef } from "react";
 
-let slideShowSources = ["../assets/finance.jpg", "../assets/calculator.jpg"];
+let slideShowSources = [
+  "../assets/finance.jpg",
+  "../assets/calculator.jpg",
+  "../assets/slide1.jpeg",
+];
 
 export default function Home() {
   return (
@@ -28,7 +32,9 @@ export default function Home() {
               </div>
               <p className="hero-text container">
                 <b>
-                  <a href="#">Monkey Buisness</a>
+                  <a href="#">
+                    <h1>Monkey Buisness</h1>
+                  </a>
                 </b>
                 Here to help <b>Start-ups & Growing Businesses</b>Make
                 data-driven decisions, optimize cash flow, and keep
@@ -39,8 +45,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="analyze">
-        <div className="analyze-curve-top">
+      <section id="analyze">
+        <div id="analyze-curve-top">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
@@ -53,21 +59,26 @@ export default function Home() {
             ></path>
           </svg>
         </div>
-        <div className="analyze-div">
+        <div id="analyze-div">
           <div className="grid container">
             <div className="grid-item-div">
+              <div className="hero-border-div"></div>
               <h1>Analyze, Observe, Decide</h1>
               <p>
-                Using our analysis tool, observe the trends and decide on your
-                next actions
+                Using the Tools, from our collection Perform various analysis
+                techniques, Observe the results and generate reports & Decide on
+                your next <b>Buisness Move</b>
               </p>
+              <a id="analyze-button" href="#tools">
+                Begin!
+              </a>
             </div>
             <div className="grid-item-div">
               <img src="../assets/graph.png" alt="" />
             </div>
           </div>
         </div>
-        <div className="analyze-curve-bottom">
+        <div id="analyze-curve-bottom">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
@@ -82,21 +93,46 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="tools">
-        <div className="tools-div">
-          <h1>The Collection</h1>
-          <div className="container card-grid">
-            <Card
-              img={"../assets/calculator.jpg"}
-              heading={"Monkey-Graph"}
-              description={
-                "A Tool for performing Graphical Analysis on Reports"
-              }
-              link={"/f"}
-            />
-            <Card />
-            <Card />
-            <Card />
+      <section id="tools">
+        <div id="tools-div">
+          <div className="grid">
+            <div className="container grid-item-div">
+              <div className="card-grid">
+                <Card
+                  img={"../assets/graphAnalysis.png"}
+                  heading={"Graphical Analyzer"}
+                  description={
+                    "A Tool for performing Graphical Analysis on Reports"
+                  }
+                  link={"/f"}
+                />
+
+                <Card
+                  img={"../assets/model.png"}
+                  heading={"Regression Model"}
+                  description={
+                    "Require predicting the sales next month, or your annual turnover. Just the tool you need"
+                  }
+                  link={"/f"}
+                />
+
+                <Card
+                  img={"../assets/upcoming.png"}
+                  heading={"Upcoming..."}
+                  description={"An Upcoming Project"}
+                />
+              </div>
+            </div>
+            <div className="grid-item-div container">
+              <div id="tools-heading">
+                <div className="hero-border-div"></div>
+                <h1>The Collection</h1>
+                <p>
+                  Our Collection of Tools <b>For You!</b>
+                  <b>❤️</b>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

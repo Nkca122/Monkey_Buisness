@@ -30,7 +30,7 @@ export default function Card(props) {
           </div>
         </a>
       ) : (
-        <a href="#">
+
           <div className="card-div container">
             {heading ? <h3>{heading}</h3> : null}
             {imgSrc ? (
@@ -47,7 +47,6 @@ export default function Card(props) {
               </div>
             ) : null}
           </div>
-        </a>
       )}
     </>
   );

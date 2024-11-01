@@ -35,7 +35,7 @@ export default function Header() {
           <div className="h-item-div container">
             <div className="h-hero">
               <img src="../assets/logo.png" alt="" className="h-logo" />
-              <button>Begin!</button>
+              <a href="#tools">Begin!</a>
             </div>
           </div>
           <div className="h-item-div container">

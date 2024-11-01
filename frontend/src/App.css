@@ -1,6 +1,7 @@
 /* Root Div */
 *, *::after, *::before{
   margin: 0; padding: 0; box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 #root {
@@ -57,7 +58,7 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 950px){
+@media (min-width: 450px){
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -89,7 +90,7 @@
   width: 100%;
 }
 
-.h-hero button {
+.h-hero a {
   display: flex; justify-content: center; align-items: center;
   height: 100%; font-size: 1rem;
   border: 1px solid var(--contrast); color: var(--primary);
@@ -105,7 +106,7 @@
 
 }
 
-.h-hero button:hover {
+.h-hero a:hover {
   transform: scale(1.2);
 }
 
@@ -177,8 +178,22 @@ main {
   border-radius: var(--border-24);
 
   color: var(--black);
-
 }
+
+@media (max-width: 1036px){
+  .hero-div .grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+@media (min-width: 1036px) {
+  .hero-div .grid {
+    grid-template-columns: repeat(2, 2fr) !important;
+  }
+}
+
+
+
 
 .hero-waves {
   position: absolute; top: 0; left: 0; z-index: -1;
@@ -197,29 +212,17 @@ main {
 }
 
 
-@media (max-width: 950px) {
+@media (max-width: 450px) {
   .hero-img, .hero-img-div{
     height: 286px;
   }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 450px) {
   .hero-img, .hero-img-div{
     height: 600px;
   }
 }
-
-/* @media (max-width: 950px) {
-  .hero-img-div {
-    mask: none;
-  }
-}
-
-@media (min-width: 950px) {
-  .hero-img-div {
-    mask: url("../assets/blob-mask2.svg") center/cover no-repeat;
-  }
-} */
 
 .slideshow-div {
   background-color: var(--white);
@@ -231,6 +234,9 @@ main {
   background-position: left top;
 
   border-right: 5px solid var(--black);
+  width: 100%; display: flex;
+
+
 }
 
 .hero-img-div {
@@ -261,7 +267,7 @@ main {
 .hero-border-div {
   border: 3px solid var(--primary-dark);
   border-radius: 50%;
-  width: 80%; aspect-ratio: 1;
+  height: 80%; aspect-ratio: 1;
 
   animation: rotate360 100s linear infinite; 
   background-image: url("../assets/poly-grid.svg");
@@ -269,7 +275,7 @@ main {
   position: absolute; z-index: -1;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 450px) {
   .hero-text-div {
     background-color: var(--white);
     padding-top: var(--padding); padding-bottom: var(--padding);
@@ -277,7 +283,7 @@ main {
   }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 450px) {
   .hero-text-div {
     background: none;
   }
@@ -295,14 +301,14 @@ main {
   height: 6em; top: 80%; 
 }
 
-@media (max-width: 950px) {
+@media (max-width: 450px) {
   .hero-text {
     top: var(--margin);
     justify-content: flex-start;
   }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 450px) {
   .hero-text {
     top: 0;
     justify-content: center;
@@ -314,21 +320,15 @@ main {
   font-size: 1rem; line-height: 1.2em;
   display: flex; align-items: center;  flex-direction: column;
   height: 100%;
-
-  font-weight: calc(var(--bold)/1.25);
   text-align: left;
 }
 
 .hero-text b{
   display:block; color: inherit;
   text-align: justify; 
-
-
-  font-weight: 900;
-
 }
 
-@media (max-width: 950px) {
+@media (max-width: 450px) {
 
   .hero-text b a::after{
     content: url("../assets/logo-before.png");
@@ -338,7 +338,7 @@ main {
   }
 }
 
-.hero-text b a {
+.hero-text b a, .hero-text b a h1 {
   font-size: 2.5rem;
   color: var(--contrast);
   text-shadow: 2px 0 0 var(--contrast),
@@ -351,11 +351,11 @@ main {
   -webkit-text-stroke: 0.5px var(--white);
 }
 
-.analyze {
+#analyze {
   background-color: var(--primary-light);
 }
 
-.analyze-curve-top {
+#analyze-curve-top {
   position: absolute;
   top: 0;
   left: 0;
@@ -364,25 +364,28 @@ main {
   line-height: 0;
 }
 
-.analyze-curve-top svg {
+#analyze-curve-top svg {
   position: relative; display: block;
   width: calc(100% + 1.3px);
   height: var(--wave-height);
 }
 
-.analyze-curve-top .shape-fill {
+#analyze-curve-top .shape-fill {
   fill: var(--primary);
 }
 
 
 
-.analyze-div h1 {
+#analyze-div h1 {
   font-size: 2.5rem;
   color: var(--contrast);
   text-shadow: 2px 0 0 var(--contrast),
   4px 0 0 var(--contrast-accent);
 
   -webkit-text-stroke: 0.5px var(--white);
+
+  width: 100%;
+  text-align: right;
 }
 
 @keyframes buttonFill{
@@ -392,25 +395,48 @@ main {
     background-size: 100% 100%; color: var(--white);
   }
 }
-.analyze-div button {
-  padding: var(--padding); margin: var(--margin);
-  font-size: 1.5rem; font-weight: 900;
+
+#analyze-div .hero-border-div {
+  height: 60% !important;
+}
+
+#analyze-div p{
+  color: var(--black);
+  font-size: 1rem; width: 90%;
+
+  text-align: left;
+}
+
+#analyze-div p b{
+  display: block; font-size: 1.05rem;
+  text-align: center;
+}
+
+#analyze-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
   border: 1px solid var(--contrast);
-  background-image: linear-gradient(to bottom, var(--white), var(--white) 100%);
   color: var(--primary);
+  padding: var(--padding);
+  font-weight: var(--bold);
+  text-shadow: 1px 0 0 var(--contrast), 2px 0 0 var(--contrast-accent);
+  background-color: var(--white);
+  transition: all 0.2s ease-in-out;
+
+  margin: var(--margin);
 }
 
-.analyze-div button:hover {
-  animation: buttonFill 0.35s ease-in-out 0ms 1 forwards;
-  background-repeat: no-repeat; background-image: linear-gradient(to bottom, var(--contrast-accent), var(--contrast-accent) 100%);
-  border: 1px solid var(--primary);
+#analyze-button:hover {
+  transform: scale(1.2);
 }
 
-.analyze-div img {
+#analyze-div img {
   width: 100%;
 }
 
-.analyze-curve-bottom {
+#analyze-curve-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -419,31 +445,62 @@ main {
   line-height: 0;
 }
 
-.analyze-curve-bottom svg {
+#analyze-curve-bottom svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
   height: 150px;
 }
 
-.analyze-curve-bottom .shape-fill {
+#analyze-curve-bottom .shape-fill {
   fill: var(--primary-dark);
 }
 
-.tools {
+#tools {
   background-color: var(--primary-dark);
 }
 
-.tools-div {
+#tools-div {
   display: flex; flex-direction: column; align-items: center;
   width: 100%;
 }
 
-.tools-div h1 {
+#tools-div .hero-border-div {
+  height: 20% !important; border: 3px solid var(--primary-light) !important;
+}
+
+@media (max-width: 450px){
+  #tools-div .grid{
+    display: flex !important; flex-direction: column-reverse !important;
+  }
+  
+}
+
+
+#tools-heading {
+  border: 3px solid var(--white);
+  background-color: var(--primary-light);
+  width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center;
+  padding: var(--padding);
+}
+
+#tools-div h1 {
   font-size: 2.5rem;
   color: var(--contrast);
   text-shadow: 2px 0 0 var(--contrast), 4px 0 0 var(--contrast-accent);
   -webkit-text-stroke: 0.5px var(--white);
+  width: 80%;
+}
+
+#tools-heading p {
+  color: var(--black); font-size: 0.95rem;
+  text-align: center;
+  width: 80%;
+}
+
+#tools-heading p b {
+  display: block;
 }
 
 
