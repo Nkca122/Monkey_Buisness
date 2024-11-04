@@ -69,7 +69,7 @@ export default function Home() {
                 techniques, Observe the results and generate reports & Decide on
                 your next <b>Buisness Move</b>
               </p>
-              <a id="analyze-button" href="#tools">
+              <a id="analyze-button" href="/#tools">
                 Begin!
               </a>
             </div>
@@ -104,7 +104,7 @@ export default function Home() {
                   description={
                     "A Tool for performing Graphical Analysis on Reports"
                   }
-                  link={"/f"}
+                  link={`${import.meta.env.VITE_GRAPH}`}
                 />
 
                 <Card
