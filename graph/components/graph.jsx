@@ -49,7 +49,6 @@ function Graph(props) {
                 onChange={(event) => {
                   let target = event.target;
                   let option = target.options[target.selectedIndex].value;
-
                   let x_df = [];
                   data.forEach((el) => {
                     x_df.push(el[`${option}`]);
@@ -57,6 +56,7 @@ function Graph(props) {
 
                   setLabels(x_df);
                 }}
+                defaultValue={Object.entries(data[0])[0][0]}
               >
                 <optgroup label={"Set The Labels"}>
                   {data
@@ -79,7 +79,7 @@ function Graph(props) {
                 onChange={(event) => {
                   let target = event.target;
                   let option = target.options[target.selectedIndex].value;
-
+                  
                   let y_df = [];
                   data.forEach((el) => {
                     y_df.push(el[`${option}`]);
@@ -87,6 +87,7 @@ function Graph(props) {
 
                   setValues(y_df);
                 }}
+                defaultValue={Object.entries(data[0])[0][0]}
               >
                 <optgroup label={"Set The Quantity"}>
                   {data
@@ -156,7 +157,7 @@ export default function GraphDiv(props) {
               padding: "var(--padding)",
               justifyContent: "space-between",
               alignItems: "center",
-              color: '#ffffff'
+              color: "#ffffff",
             }}
           >
             <button
@@ -210,7 +211,7 @@ export default function GraphDiv(props) {
         {graphList}
         <div className="grid-item-div add-graph-btn-div">
           <button onClick={onBtnClick} className="add-graph-btn">
-            <FontAwesomeIcon icon={faPlus} size="5x" color="var(--black)"/>
+            <FontAwesomeIcon icon={faPlus} size="5x" color="var(--black)" />
           </button>
         </div>
       </div>

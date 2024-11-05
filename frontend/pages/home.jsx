@@ -113,7 +113,7 @@ export default function Home() {
                   description={
                     "Require predicting the sales next month, or your annual turnover. Just the tool you need"
                   }
-                  link={"/f"}
+                  link={`${import.meta.env.VITE_MODEL}`}
                 />
 
                 <Card
