@@ -1,4 +1,4 @@
-<div align = "center" style='background-color: "#000"'>
+<div align = "center" style='background-color: "#000";'>
     <img src="./frontend/assets/logo.png" height="50">
     <h2 align="center">
         Monkey Buisness
