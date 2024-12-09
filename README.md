@@ -1,5 +1,5 @@
 <div align = "center">
-    <img src="./frontend/assets/logo.png" height="50">
+    <img src="./frontend/assets/logo.png" height="50" invert='100%'>
     <h2 align="center">
         Monkey Buisness
     </h2>
